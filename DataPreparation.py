@@ -1,12 +1,3 @@
-import pandas as pd
-
-listings = pd.read_csv('listings.csv')
-ReducedData = listings[['neighbourhood_cleansed','room_type','accommodates','bathrooms','bedrooms','beds','bed_type','price','minimum_nights','maximum_nights','availability_365','review_scores_rating']]
-
-ReducedData.to_csv('ReducedData.csv')
-
-
-'''
 from scipy import stats
 import scipy
 import pandas as pd
@@ -23,4 +14,3 @@ DataPrice = listings[['price']]
 OutlierData = listings[(np.abs(scipy.stats.zscore(DataPrice)) < 3).all(axis=1)]
 
 OutlierData.to_csv('ReducedData.csv')
-'''
